@@ -3,6 +3,7 @@ import (
 	"fmt"	
 	"strings"		//For string operations
 	"io/ioutil"		//Use ioutil for IO operations
+	"os"
 )
 
 //Part 2: Create a new type to represent a deck of cards as slice of string
@@ -62,4 +63,21 @@ func (d deck) toByteSlice() []byte {
 // Part 9: Save the byte slice to file
 func (d deck) saveToFile(fileName string) error {
 	return ioutil.WriteFile(fileName, d.toByteSlice(), 0644)
+}
+
+//Part 10: Reading from Hard Drive and Error Handling
+func newDeckFromFile(fileName string) deck{
+	fileContentsAsByteSlice, err := os.ReadFile(fileName)
+	if isErr(err) {
+		handleReadFromFileErr(err)	//Handle error
+	}
+	// Short cut to return the deck read from the file
+	// return deck(strings.Split(string(fileContentsAsByteSlice),","))
+
+	//Long format for learning purpose
+	simpleText := string(fileContentsAsByteSlice)
+	// Split the string into a string slice
+	cardsSlice := strings.Split(simpleText,",")
+	// Convert slice of cards into the deck type
+	return deck(cardsSlice)
 }

@@ -84,4 +84,10 @@ func  main()  {											//Execution starts here (mandatory for executable file
 	// Prints: <Nil> or the error
 	cardsToFile.saveToFile("my_cards_2")		 
 	// Prints nothing as return was not used. Therefore, collecting a returned value is optional
+
+//Part 10: Reading from Hard Drive and Handle error
+	cardsFromFile := newDeckFromFile("my_cards")
+	cardsFromFile.print()	//Should print the deck read from the file
+
+
 }
