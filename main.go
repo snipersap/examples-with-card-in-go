@@ -39,6 +39,10 @@ func  main()  {											//Execution starts here (mandatory for executable file
 	name := nameOfDeck.getDeckName()
 	fmt.Println("Name of the deck is:", name)
 
+//Part 4: Create a new Deck with the help of a function - 4 numbers of all 4 suites
+	myNewDeck := newDeck()
+	myNewDeck.print()
+
 }
 
 func newCard(cardName string)string  {			//New function, in the same package and file.
