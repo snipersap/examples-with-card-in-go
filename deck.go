@@ -50,19 +50,19 @@ func deal(receivedDeck deck, sizeOfHand int) (deck, deck) {
 	return receivedDeck[:sizeOfHand], receivedDeck[sizeOfHand:]
 }
 
-//Part 7: Deck to String
-func (d deck) toString() string {
+//Part 7: Deck to String. Used String instead of toString as per Effective Go.
+func (d deck) String() string {
 	return strings.Join([]string(d),",")
 }
 
 //Part 8: Convert Deck to byte slice
-func (d deck) toByteSlice() []byte {
-	return []byte(d.toString())
+func (d deck) ByteSlice() []byte {
+	return []byte(d.String())
 }
 
 // Part 9: Save the byte slice to file
 func (d deck) saveToFile(fileName string) error {
-	return ioutil.WriteFile(fileName, d.toByteSlice(), 0644)
+	return ioutil.WriteFile(fileName, d.ByteSlice(), 0644)
 }
 
 //Part 10: Reading from Hard Drive and Error Handling
