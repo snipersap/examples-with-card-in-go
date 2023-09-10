@@ -58,4 +58,25 @@ func  main()  {											//Execution starts here (mandatory for executable file
 
 //Part 6: Slice extraction example: 
 	SampleFunc()
+
+// Part 7: Convert deck to String
+	// Create a new Deck, to avoid any overlap
+	deckOfStrings := newDeck()
+	fmt.Println(deckOfStrings.toString())	//Convert to string by calling the func
+	// Prints: Ace of Hearts,Two of Hearts,Three of Hearts,Four of Hearts,Ace of Spades,Two of Spades,Three of Spades,Four of Spades,
+	// Ace of Diamonds,Two of Diamonds,Three of Diamonds,Four of Diamonds,Ace of Clubs,Two of Clubs,Three of Clubs,Four of Clubs
+
+//Part 8: Convert deck to string and then to byte slice
+	//Use new Deck
+	sampleDeck2 := newDeck()
+	fmt.Println(sampleDeck2.toByteSlice())
+// Prints: [65 99 101 32 111 102 32 72 101 97 114 116 115 44 84 119 111 32 111 102 32 72 101 97 114 116 115 44 84 104 114 101 101 
+// 32 111 102 32 72 101 97 114 116 115 44 70 111 117 114 32 111 102 32 72 101 97 114 116 115 44 65 99 101 32 111 102 32 83 112 97
+// 100 101 115 44 84 119 111 32 111 102 32 83 112 97 100 101 115 44 84 104 114 101 101 32 111 102 32 83 112 97 100 101 115 44 70 111 
+// 117 114 32 111 102 32 83 112 97 100 101 115 44 65 99 101 32 111 102 32 68 105 97 109 111 110 100 115 44 84 119 111 32 111 102 32 
+// 68 105 97 109 111 110 100 115 44 84 104 114 101 101 32 111 102 32 68 105 97 109 111 110 100 115 44 70 111 117 114 32 111 102 32 
+// 68 105 97 109 111 110 100 115 44 65 99 101 32 111 102 32 67 108 117 98 115 44 84 119 111 32 111 102 32 67 108 117 98 115 44 84 104 
+// 114 101 101 32 111 102 32 67 108 117 98 115 44 70 111 117 114 32 111 102 32 67 108 117 98 115]
+
+
 }

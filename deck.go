@@ -1,4 +1,8 @@
 package main
+import (
+	"fmt"	
+	"strings"
+)
 
 //Part 2: Create a new type to represent a deck of cards as slice of string
 type deck []string
@@ -42,4 +46,14 @@ func newDeck() deck {
 //Part 5: Create a deal: a hand of few cards and the remaining cards from the deck
 func deal(receivedDeck deck, sizeOfHand int) (deck, deck) {
 	return receivedDeck[:sizeOfHand], receivedDeck[sizeOfHand:]
+}
+
+//Part 7: Deck to String
+func (d deck) toString() string {
+	return strings.Join([]string(d),",")
+}
+
+//Part 8: Convert Deck to byte slice
+func (d deck) toByteSlice() []byte {
+	return []byte(d.toString())
 }
