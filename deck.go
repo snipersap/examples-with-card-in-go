@@ -1,7 +1,8 @@
 package main
 import (
 	"fmt"	
-	"strings"
+	"strings"		//For string operations
+	"io/ioutil"		//Use ioutil for IO operations
 )
 
 //Part 2: Create a new type to represent a deck of cards as slice of string
@@ -56,4 +57,9 @@ func (d deck) toString() string {
 //Part 8: Convert Deck to byte slice
 func (d deck) toByteSlice() []byte {
 	return []byte(d.toString())
+}
+
+// Part 9: Save the byte slice to file
+func (d deck) saveToFile(fileName string) error {
+	return ioutil.WriteFile(fileName, d.toByteSlice(), 0644)
 }

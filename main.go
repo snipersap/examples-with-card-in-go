@@ -78,5 +78,10 @@ func  main()  {											//Execution starts here (mandatory for executable file
 // 68 105 97 109 111 110 100 115 44 65 99 101 32 111 102 32 67 108 117 98 115 44 84 119 111 32 111 102 32 67 108 117 98 115 44 84 104 
 // 114 101 101 32 111 102 32 67 108 117 98 115 44 70 111 117 114 32 111 102 32 67 108 117 98 115]
 
-
+//Part 9: Write the byte slice to file
+	cardsToFile := newDeck()
+	fmt.Println(cardsToFile.saveToFile("my_cards"))
+	// Prints: <Nil> or the error
+	cardsToFile.saveToFile("my_cards_2")		 
+	// Prints nothing as return was not used. Therefore, collecting a returned value is optional
 }
