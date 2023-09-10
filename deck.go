@@ -27,13 +27,13 @@ func (name deckName) getDeckName() deckName{
 //Part 4: Function to create a new Deck of cards of a combination of 4 numbers and 4 suites
 func newDeck() deck {
 	cards := deck{}				//Init deck
-	cardSuites := []string{"Hearts","Spades","Diamonds","Clubs"}
+	cardSuites := []string{"Hearts","Spades","Diamonds","Clubs"} //init the slice of strings as the 4 suits
 	cardValues := []string{"Ace","Two","Three","Four"}
 
 	//Create deck as a combo of suit and values
-	for _,suit := range cardSuites {
+	for _,suit := range cardSuites {			//Use _ to tell the compiler that you don't want to use the required variable
 		for _,value := range cardValues {
-			cards = append(cards, value+" of "+suit)
+			cards = append(cards, value+" of "+suit)	//Combine strings using +
 		}
 	}
 	return cards
