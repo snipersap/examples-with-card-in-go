@@ -29,9 +29,19 @@ func  main()  {											//Execution starts here (mandatory for executable file
 	fmt.Println("The full deck of cards is:",deckOfCards)
 	deckOfCards.print()
 
+//Part 3: demonstrate the use of type with single data types in go
+	var theSizeOfDeck deckSize = 3	//Full format of initialization
+	sizeOfDeck := deckSize(2)		//Shortcut for initialization with custom type
+	sizeOfDeck.showDeckSize()		//Call receiver function
+	theSizeOfDeck.showDeckSize()
+
+	nameOfDeck := deckName("My Deck")
+	name := nameOfDeck.getDeckName()
+	fmt.Println("Name of the deck is:", name)
+
 }
 
 func newCard(cardName string)string  {			//New function, in the same package and file.
 												//Does not need to be imported 
 		return cardName
-}
+}-

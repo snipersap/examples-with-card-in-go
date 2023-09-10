@@ -1,10 +1,24 @@
 package main
 
-//Create a new type to represent a deck of cards as slice of string
+//Part 2: Create a new type to represent a deck of cards as slice of string
 type deck []string
 
+//Part 2: Create a receiver function, that provides access to the variables of type deck to call it
+//receivedDeck is the actual variable (reference) that called it (similar to self in Python)
 func (receivedDeck deck) print(){
 	for i,card := range receivedDeck {
 		fmt.Println(i,">",card)
 	}
+}
+
+//Part 3: Declare few more types with primary types in go
+type deckSize int
+type deckName string
+
+func (receivedDeckSize deckSize) showDeckSize() {
+	fmt.Println("size of the deck is", receivedDeckSize)
+}
+
+func (name deckName) getDeckName() deckName{
+	return name
 }
