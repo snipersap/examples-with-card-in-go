@@ -9,7 +9,7 @@ import "fmt"	//Import all functions from a reusable or library package
 func newCard(cardName string)string  {			//New function, in the same package and file.
 	//Does not need to be imported 
 return cardName
-}-
+}
 
 func  main()  {											//Execution starts here (mandatory for executable file)
 
@@ -50,9 +50,12 @@ func  main()  {											//Execution starts here (mandatory for executable file
 
 //Part 5: Create a deck of cards, create a hand and also print the remaining cards in the deck
 	part5Deck := newDeck()
-	hand, leftDeck := deal(part5Deck, 3)
+	hand, leftDeck := deal(part5Deck, 3)		//Use := because we are initializing the variables before storing the return value
 	fmt.Println("The hand dealt in the deal:")
-	hand.print()
+	hand.print()								//Reuse the print function to print the values of the deck type
 	fmt.Println("The remaining deck:")
 	leftDeck.print()
+
+//Part 6: Slice extraction example: 
+	SampleFunc()
 }

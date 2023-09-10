@@ -1,4 +1,5 @@
-package sliceExample
+package main
+import "fmt"
 
 //Contains an example of how slice works
 
