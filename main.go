@@ -6,6 +6,11 @@ import "fmt"	//Import all functions from a reusable or library package
 //  "String"
 //)
 
+func newCard(cardName string)string  {			//New function, in the same package and file.
+	//Does not need to be imported 
+return cardName
+}-
+
 func  main()  {											//Execution starts here (mandatory for executable file)
 
 //Part 1: Print our cards, which is a slice of string, one by one
@@ -43,9 +48,11 @@ func  main()  {											//Execution starts here (mandatory for executable file
 	myNewDeck := newDeck()
 	myNewDeck.print()
 
+//Part 5: Create a deck of cards, create a hand and also print the remaining cards in the deck
+	part5Deck := newDeck()
+	hand, leftDeck := deal(part5Deck, 3)
+	fmt.Println("The hand dealt in the deal:")
+	hand.print()
+	fmt.Println("The remaining deck:")
+	leftDeck.print()
 }
-
-func newCard(cardName string)string  {			//New function, in the same package and file.
-												//Does not need to be imported 
-		return cardName
-}-

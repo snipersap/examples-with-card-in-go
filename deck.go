@@ -38,3 +38,8 @@ func newDeck() deck {
 	}
 	return cards
 }
+
+//Part 5: Create a deal: a hand of few cards and the remaining cards from the deck
+func deal(receivedDeck deck, sizeOfHand int) (deck, deck) {
+	return receivedDeck[:sizeOfHand], receivedDeck[sizeOfHand:]
+}
