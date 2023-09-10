@@ -7,6 +7,8 @@ import "fmt"	//Import all functions from a reusable or library package
 //)
 
 func  main()  {											//Execution starts here (mandatory for executable file)
+
+//Part 1: Print our cards, which is a slice of string, one by one
 	//Create new Slice of cards and initialize them
 	cards := []string {"2 of Spades", newCard("3 of Diamonds")}
 	
@@ -21,8 +23,14 @@ func  main()  {											//Execution starts here (mandatory for executable file
 		fmt.Println(i,">",card)
 	}
 
+//Part 2: Declare a collection of cards from the type deck and print them out one by one
+	deckOfCards := deck{"2 of Spades", newCard("3 of diamonds")}
+	deckOfCards = append(deckOfCards, newCard("4 of Hearts"))
+	fmt.Println("The full deck of cards is:",deckOfCards)
+	deckOfCards.print()
 
 }
+
 func newCard(cardName string)string  {			//New function, in the same package and file.
 												//Does not need to be imported 
 		return cardName
