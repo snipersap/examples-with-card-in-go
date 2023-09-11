@@ -5,6 +5,7 @@ import (
 	"io/ioutil"		//Use ioutil for IO operations
 	"os"
 	"math/rand"
+	"time"
 )
 
 //Part 2: Create a new type to represent a deck of cards as slice of string
