@@ -103,7 +103,7 @@ func (d deck) randomShuffle() {
 	//1. Find a changing seed
 	//2. Generate a random number in a range
 	//3. Swap slice elements
-	timeInInt64 := time.Now().UnixNano()
+	timeInInt64 := time.Now().UnixNano()	//time.Now returns a Time object, used to call UnixNano func returning a int64 number
 	source := rand.NewSource(timeInInt64)
 	randObj := rand.New(source)				//Creating a variable of type Rand, instead of using the rand package
 // 	shortcut: randObj := rand.New(rand.NewSource(time.Now().UnixNano()))
