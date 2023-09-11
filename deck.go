@@ -87,13 +87,28 @@ func newDeckFromFile(fileName string) deck{
 	// return deck(cardsSlice)
 }
 
+//Part 11: Create a deck shuffle function without seeding
 func (d deck) shuffle() {
 	// 1. Create a random number upto length of deck -1 (deck index starts from 0)
 	// 2. Loop over the deck and swap each position with the randomly returned position
-	
 	for i := range d {
 		newPosition := rand.Intn(len(d)-1)				//get random number
 		d[i], d[newPosition] = d[newPosition], d[i]		//swap slices
 	}
+}
 
+//Part 12: Shuffle the deck with seed
+func (d deck) randomShuffle() {
+	//1. Find a changing seed
+	//2. Generate a random number in a range
+	//3. Swap slice elements
+	timeInInt64 := time.Now().UnixNano()
+	source := rand.NewSource(timeInInt64)
+	randObj := rand.New(source)				//Creating a variable of type Rand, instead of using the rand package
+// 	shortcut: randObj := rand.New(rand.NewSource(time.Now().UnixNano()))
+
+	for i := range d {
+		newPosition := randObj.Intn(len(d)-1)			//Create a really random number with the unix nano time
+		d[i], d[newPosition] = d[newPosition], d[i]		//swap slices
+	}
 }

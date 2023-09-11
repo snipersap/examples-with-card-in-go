@@ -96,5 +96,11 @@ func  main()  {											//Execution starts here (mandatory for executable file
 	myCardsToShuffle := newDeck()
 	myCardsToShuffle.shuffle()
 	myCardsToShuffle.print()
+	
+//Part 12: Shuffle the deck with seed
+	fmt.Println("Part 12: Shuffle the deck with seed")
+	myCardsToRandomShuffle := newDeck()
+	myCardsToRandomShuffle.randomShuffle()
+	myCardsToRandomShuffle.print()	
 
 }
