@@ -72,8 +72,7 @@ func newDeckFromFile(fileName string) deck{
 	if err != nil {
 		fmt.Println("Error:", err)	//Print the error
 		os.Exit(1)	//Exit with non-zero error code
-	}
-	else{
+	} else {
 		fmt.Println("ReadFile Error:", err)
 	}
 	// Short cut to return the deck read from the file
