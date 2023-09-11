@@ -12,6 +12,7 @@ type deck []string
 //Part 2: Create a receiver function, that provides access to the variables of type deck to call it
 //receivedDeck is the actual variable (reference) that called it (similar to self in Python)
 func (receivedDeck deck) print(){
+	fmt.Println("Printing Cards via print receiver function:>")
 	for i,card := range receivedDeck {
 		fmt.Println(i,">",card)
 	}

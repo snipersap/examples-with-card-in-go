@@ -86,8 +86,10 @@ func  main()  {											//Execution starts here (mandatory for executable file
 	// Prints nothing as return was not used. Therefore, collecting a returned value is optional
 
 //Part 10: Reading from Hard Drive and Handle error
-	cardsFromFile := newDeckFromFile("my_cards")
+	cardsFromFile := newDeckFromFile("my_cards_1")
+	fmt.Println("Part 10: Reading from Hard Drive and Handle error")
 	cardsFromFile.print()	//Should print the deck read from the file
+
 
 
 }
