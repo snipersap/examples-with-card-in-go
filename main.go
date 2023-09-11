@@ -79,6 +79,7 @@ func  main()  {											//Execution starts here (mandatory for executable file
 // 114 101 101 32 111 102 32 67 108 117 98 115 44 70 111 117 114 32 111 102 32 67 108 117 98 115]
 
 //Part 9: Write the byte slice to file
+	fmt.Println("Part 9: Write the byte slice to file")
 	cardsToFile := newDeck()
 	fmt.Println("SaveToFile error:",cardsToFile.saveToFile("my_cards"))
 	// Prints: <Nil> or the error
@@ -86,10 +87,14 @@ func  main()  {											//Execution starts here (mandatory for executable file
 	// Prints nothing as return was not used. Therefore, collecting a returned value is optional
 
 //Part 10: Reading from Hard Drive and Handle error
-	cardsFromFile := newDeckFromFile("my_cards_1")
 	fmt.Println("Part 10: Reading from Hard Drive and Handle error")
+	cardsFromFile := newDeckFromFile("my_cards")
 	cardsFromFile.print()	//Should print the deck read from the file
 
-
+//Part 11: Shufle the deck
+	fmt.Println("Part 11: Shufle the deck")
+	myCardsToShuffle := newDeck()
+	myCardsToShuffle.shuffle()
+	myCardsToShuffle.print()
 
 }

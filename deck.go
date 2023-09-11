@@ -4,6 +4,7 @@ import (
 	"strings"		//For string operations
 	"io/ioutil"		//Use ioutil for IO operations
 	"os"
+	"math/rand"
 )
 
 //Part 2: Create a new type to represent a deck of cards as slice of string
@@ -84,4 +85,15 @@ func newDeckFromFile(fileName string) deck{
 	// cardsSlice := strings.Split(simpleText,",")
 	// Convert slice of cards into the deck type
 	// return deck(cardsSlice)
+}
+
+func (d deck) shuffle() {
+	// 1. Create a random number upto length of deck -1 (deck index starts from 0)
+	// 2. Loop over the deck and swap each position with the randomly returned position
+	
+	for i := range d {
+		newPosition := rand.Intn(len(d)-1)				//get random number
+		d[i], d[newPosition] = d[newPosition], d[i]		//swap slices
+	}
+
 }
