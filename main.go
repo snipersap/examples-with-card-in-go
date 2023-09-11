@@ -80,7 +80,7 @@ func  main()  {											//Execution starts here (mandatory for executable file
 
 //Part 9: Write the byte slice to file
 	cardsToFile := newDeck()
-	fmt.Println(cardsToFile.saveToFile("my_cards"))
+	fmt.Println("SaveToFile error:",cardsToFile.saveToFile("my_cards"))
 	// Prints: <Nil> or the error
 	cardsToFile.saveToFile("my_cards_2")		 
 	// Prints nothing as return was not used. Therefore, collecting a returned value is optional
