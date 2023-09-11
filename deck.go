@@ -69,16 +69,17 @@ func (d deck) saveToFile(fileName string) error {
 func newDeckFromFile(fileName string) deck{
 	fileContentsAsByteSlice, err := os.ReadFile(fileName)
 	fmt.Println("ReadFile Error:", err)
-	// if isErr(err) {
-	// 	handleReadFromFileErr(err)	//Handle error
-	// }
+	if err != nil {
+		fmt.Println("Error:", err)	//Print the error
+		os.Exit(1)	//Exit with non-zero error code
+	}
 	// Short cut to return the deck read from the file
-	// return deck(strings.Split(string(fileContentsAsByteSlice),","))
+	return deck(strings.Split(string(fileContentsAsByteSlice),","))
 
-	//Long format for learning purpose
-	simpleText := string(fileContentsAsByteSlice)
+	// Long format for learning purpose
+	// simpleText := string(fileContentsAsByteSlice)
 	// Split the string into a string slice
-	cardsSlice := strings.Split(simpleText,",")
+	// cardsSlice := strings.Split(simpleText,",")
 	// Convert slice of cards into the deck type
-	return deck(cardsSlice)
+	// return deck(cardsSlice)
 }
