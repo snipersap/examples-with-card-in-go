@@ -68,9 +68,10 @@ func (d deck) saveToFile(fileName string) error {
 //Part 10: Reading from Hard Drive and Error Handling
 func newDeckFromFile(fileName string) deck{
 	fileContentsAsByteSlice, err := os.ReadFile(fileName)
-	if isErr(err) {
-		handleReadFromFileErr(err)	//Handle error
-	}
+	fmt.Println(err)
+	// if isErr(err) {
+	// 	handleReadFromFileErr(err)	//Handle error
+	// }
 	// Short cut to return the deck read from the file
 	// return deck(strings.Split(string(fileContentsAsByteSlice),","))
 

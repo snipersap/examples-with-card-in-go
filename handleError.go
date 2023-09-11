@@ -5,7 +5,7 @@ import (
 )
 
 func isErr(err error) {
-	if err != Nil {
+	if err != nil {
 		return true
 	}
 }
