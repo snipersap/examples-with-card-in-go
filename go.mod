@@ -1,3 +1,4 @@
-module cards-in-go
+module cards
+//module cards-in-go
 
 go 1.21.1
